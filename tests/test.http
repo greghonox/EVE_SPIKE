@@ -10,14 +10,43 @@ GET http://localhost:5000/usuario
 POST http://localhost:5000/usuario
 Content-Type: application/json
 
-[{
+{
     "firstname": "greg",
     "lastname": "gregorio honorato",
-},]
+    "username": "gregorio honorato",
+    "password": "gregorio honorato",
+    "phone": "19999250999"
+}
 
 ###
 GET http://localhost:5000/cliente
 
 
 ###
+POST http://localhost:5000/cliente
+Content-Type: application/json
+
+{
+    "external_id": "23"
+}
+
+
+###
 GET http://localhost:5000/profissao
+
+
+###
+POST http://localhost:5000/profissao
+Content-Type: application/json
+
+{
+    "name": "gregorio",
+    "cbo_code": "seila",
+    "subgroup_code": "nao sei também",
+    "requires_description": "aquisição para mim mesmo",
+    "coverages": {
+        "coverage_id": [1,2,3,4,5,6,7],
+        "max_covered_capital": 10,
+        "pricing_factor": 10
+    }
+}

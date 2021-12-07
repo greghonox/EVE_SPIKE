@@ -2,9 +2,8 @@ from eve import Eve
 
 from models import cliente, profissao, user
 
-RESOURCE_METHODS = ["GET", "POST"]
-ITEM_METHODS = ["GET", "PATCH", "PUT", "DELETE"]
 MONGO_HOST = "localhost"
+MONGO_DBNAME = "apitest"
 MONGO_PORT = 27017
 # RECONHECE OS .py MODELOS AUTOMATICAMENTE
 settings = {

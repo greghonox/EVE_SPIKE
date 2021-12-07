@@ -1,6 +1,6 @@
 schema = {
     "pagination": False,
-    "resource_methods": ["GET"],
+    "resource_methods": ["GET", "POST"],
     "item_methods": ["GET", "PATCH"],
     "public_methods": ["GET"],
     "public_item_methods": ["GET", "PATCH"],
