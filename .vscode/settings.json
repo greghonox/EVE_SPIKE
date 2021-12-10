@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "/home/gregorio/.virtualenvs/azos_core/bin/python",
+    "python.pythonPath": "venv/bin/python",
     "python.testing.pytestArgs": [
         "tests"
     ],

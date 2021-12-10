@@ -1,5 +1,7 @@
+'--------------------------------------GERAL--------------------------------------'
 ### GET
 GET http://localhost:5000/
+'--------------------------------------USUARIOS--------------------------------------'
 ### GET
 GET http://localhost:5000/usuario
 ### POST
@@ -14,30 +16,7 @@ Content-Type: application/json
     "phone": "19999250999"
 }
 
-###
 
-Content-Type: application/json
-
-{
-    "external_id": "25"
-}
-###
-GET http://localhost:5000/profissao
-
-
-###
-POST http://localhost:5000/profissao
-Content-Type: application/json
-
-{
-    "name": "gregorio",
-    "cbo_code": "seila",
-    "subgroup_code": "nao sei também",
-    "requires_description": "aquisição para mim mesmo"
-}
-
-
-###
 GET http://localhost:5000/material
 
 
@@ -69,7 +48,7 @@ Content-Type: application/json
 
 ###
 GET http://localhost:5000/material/61b34d50658d81908dd94aa8
-
+'--------------------------------------JOGO--------------------------------------'
 ###
 GET http://localhost:5000/jogo
 
@@ -111,12 +90,14 @@ Content-Type: application/json
 ###
 ###
 GET http://localhost:5000/jogo/61b35a64e0739b2af008f18e/imagem
+'--------------------------------------CLIENTE--------------------------------------'
 ###
 GET http://localhost:5000/cliente
 ###
-GET http://localhost:5000/cliente/61b23ca00adca480359d62b3
+GET http://localhost:5000/cliente/61b35ec2e9fd8125df274a1e
 ###
 POST http://localhost:5000/cliente
+'--------------------------------------PESSOA--------------------------------------'
 ### NAO FUNCIONA DIRETAMENTE
 GET http://localhost:5000/pessoa
 
@@ -127,5 +108,78 @@ Content-Type: application/json
 
 {
     "cor": "preto",
-    "idade": 18
+    "idade": 21
 }
+
+###
+GET http://localhost:5000/cliente/61b35ec2e9fd8125df274a1e/pessoa
+### PEGANDO APENAS O DADO DA PESSOA INSERIDA
+GET http://localhost:5000/cliente/61b35ec2e9fd8125df274a1e/pessoa/61b36076ef08ba3f4398d92e
+'--------------------------------------CONTA--------------------------------------'
+###
+POST http://localhost:5000/cliente/61b35ec2e9fd8125df274a1e/conta
+Content-Type: application/json
+
+{
+    "agencia": "bb",
+    "conta": "aquela la"
+}
+###
+GET http://localhost:5000/cliente/61b35ec2e9fd8125df274a1e/conta/
+'-------------------------------------PROFISSAO--------------------------------------'
+###
+POST http://localhost:5000/cliente/61b35ec2e9fd8125df274a1e/profissao
+Content-Type: application/json
+
+{
+    "cargo": "encanador",
+    "salario": "2121.10",
+    "setor": "devs"
+}
+###
+GET http://localhost:5000/cliente/61b35ed1e9fd8125df274a1f
+
+###
+GET http://localhost:5000/cliente/61b35ec2e9fd8125df274a1e/profissao/61b36c2f320380ba85149a0d
+
+###
+PATCH http://localhost:5000/cliente/61b35ec2e9fd8125df274a1e/profissao/61b36c2f320380ba85149a0d
+Content-Type: application/json
+If-Match: 4f94f004ed4d2cd0e881cfda21fc05cee1379ac6
+
+{
+    "salario": "1111",
+    "setor": "almoxerifado"
+}
+
+
+################### FORMA DE TRATAR O PROCESSAMENTO (PRE, POS) REQUISIÇÃO 
+###
+POST http://localhost:5000/cliente
+Content-Type: application/json
+
+{
+    "cargo": "faxina",
+    "salario": "900,00",
+    "setor": "producao"
+}
+
+###
+POST http://localhost:5000/cliente
+Content-Type: application/json
+
+[
+    {
+    "cargo": "faxina",
+    "salario": "900,00",
+    "setor": "producao"
+    },
+{
+    "cargo": "operador",
+    "salario": "1900,00",
+    "setor": "producao"
+}    
+]
+
+###
+GET http://localhost:5000/cliente/
