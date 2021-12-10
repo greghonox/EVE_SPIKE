@@ -1,4 +1,4 @@
-shema = {
+schema = {
     "resource_methods": ["POST", "GET"],
     "schema": {
         "firstname": {"type": "string"},

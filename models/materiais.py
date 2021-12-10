@@ -1,6 +1,6 @@
-shema = {
-    "resource_methods": ["POST", "GET", "DELETE"],
-    "item_methods": ["PUT", "PATCH", "GET"],
+schema = {
+    "resource_methods": ["POST", "GET"],
+    "item_methods": ["PUT", "PATCH", "GET", "DELETE"],
     "query_objectid_as_string": True,
     "schema": {
         "nome": {

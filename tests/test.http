@@ -68,14 +68,57 @@ Content-Type: application/json
 
 
 ###
-DELETE http://localhost:5000/material/
-Content-Type: application/json
-
-{
-    "_id": "61b25bb7b8bc84aa2b729d1f"
-}
-
+DELETE http://localhost:5000/material/61b34d4f658d81908dd94aa7
+If-Match: 2b451cb7203d874011c5cb93c0243f2243f89ac1
 
 
 ###
-GET http://localhost:5000/material/nome/123/qtde
+PATCH http://localhost:5000/material/61b34d50658d81908dd94aa8
+If-Match: 5e74a65240fa080d8d516675bbf163f38124c056
+Content-Type: application/json
+
+{
+    "cor": "verde"
+}
+
+###
+GET http://localhost:5000/material/61b34d50658d81908dd94aa8
+
+###
+GET http://localhost:5000/jogo
+
+
+###
+POST http://localhost:5000/jogo
+Content-Type: application/json
+
+{
+    "game_id": "123",
+    "titulo": "mario",
+    "nome": "mario word"
+}
+
+
+### NAO FUNCIONA ASSIM
+GET http://localhost:5000/imagem
+
+
+###
+POST http://localhost:5000/jogo/61b3555e09e9af45bb2cf037/imagem
+Content-Type: application/json
+
+{
+    "caminho": "tanto faz"
+}
+
+###
+GET http://localhost:5000/jogo/61b3555e09e9af45bb2cf037/imagem/61b35879e0739b2af008f18d
+
+
+###
+POST http://localhost:5000/jogo/61b3556109e9af45bb2cf03c/imagem
+Content-Type: application/json
+
+{
+
+}

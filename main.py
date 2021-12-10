@@ -1,17 +1,21 @@
 from eve import Eve
 
-from models import cliente, profissao, user, materiais
+from models import cliente, profissao, user, materiais, jogo, imagem
 
 MONGO_HOST = "localhost"
 MONGO_DBNAME = "apitest"
 MONGO_AUTH_SOURCE = 'teste'
 MONGO_PORT = 27017
-# RECONHECE OS .py MODELOS AUTOMATICAMENTE
+# RESOURCE_METHODS = ['GET', 'POST', 'DELETE']
+# ITEM_METHODS = ['GET', 'PUT', 'PATCH', 'DELETE']
+
 settings = {
     "DOMAIN": {
-        "usuario": user.shema,
+        "jogo": jogo.schema,
+        "usuario": user.schema,
+        "imagem": imagem.schema,
         "cliente": cliente.schema,
-        "material": materiais.shema,
+        "material": materiais.schema,
         "profissao": profissao.schema,
     }
 }
