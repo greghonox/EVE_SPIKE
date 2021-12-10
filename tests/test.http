@@ -11,15 +11,19 @@ POST http://localhost:5000/usuario
 Content-Type: application/json
 
 {
-    "firstname": "greg",
+    "firstname": "greg1",
     "lastname": "gregorio honorato",
-    "username": "gregorio honorato",
+    "username": "gregorio",
     "password": "gregorio honorato",
     "phone": "19999250999"
 }
 
 ###
 GET http://localhost:5000/cliente
+
+
+###
+GET http://localhost:5000/cliente/61b23ca00adca480359d62b3
 
 
 ###
@@ -43,10 +47,35 @@ Content-Type: application/json
     "name": "gregorio",
     "cbo_code": "seila",
     "subgroup_code": "nao sei também",
-    "requires_description": "aquisição para mim mesmo",
-    "coverages": {
-        "coverage_id": [1,2,3,4,5,6,7],
-        "max_covered_capital": 10,
-        "pricing_factor": 10
-    }
+    "requires_description": "aquisição para mim mesmo"
 }
+
+
+###
+GET http://localhost:5000/material
+
+
+###
+POST http://localhost:5000/material
+Content-Type: application/json
+
+{
+    "nome": "borracha de mao",
+    "qtde": 11,
+    "cor": "amarelo",
+    "tamanho": 12
+}
+
+
+###
+DELETE http://localhost:5000/material/
+Content-Type: application/json
+
+{
+    "_id": "61b25bb7b8bc84aa2b729d1f"
+}
+
+
+
+###
+GET http://localhost:5000/material/nome/123/qtde
