@@ -1,11 +1,7 @@
 ### GET
 GET http://localhost:5000/
-
-
 ### GET
 GET http://localhost:5000/usuario
-
-
 ### POST
 POST http://localhost:5000/usuario
 Content-Type: application/json
@@ -19,22 +15,12 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:5000/cliente
 
-
-###
-GET http://localhost:5000/cliente/61b23ca00adca480359d62b3
-
-
-###
-POST http://localhost:5000/cliente
 Content-Type: application/json
 
 {
-    "external_id": "23"
+    "external_id": "25"
 }
-
-
 ###
 GET http://localhost:5000/profissao
 
@@ -97,8 +83,6 @@ Content-Type: application/json
     "titulo": "mario",
     "nome": "mario word"
 }
-
-
 ### NAO FUNCIONA ASSIM
 GET http://localhost:5000/imagem
 
@@ -116,9 +100,32 @@ GET http://localhost:5000/jogo/61b3555e09e9af45bb2cf037/imagem/61b35879e0739b2af
 
 
 ###
-POST http://localhost:5000/jogo/61b3556109e9af45bb2cf03c/imagem
+###
+POST http://localhost:5000/jogo/61b35a64e0739b2af008f18e/imagem
 Content-Type: application/json
 
 {
+    "caminho": "outra coisa"
+}
 
+###
+###
+GET http://localhost:5000/jogo/61b35a64e0739b2af008f18e/imagem
+###
+GET http://localhost:5000/cliente
+###
+GET http://localhost:5000/cliente/61b23ca00adca480359d62b3
+###
+POST http://localhost:5000/cliente
+### NAO FUNCIONA DIRETAMENTE
+GET http://localhost:5000/pessoa
+
+
+###
+POST http://localhost:5000/cliente/61b35ec2e9fd8125df274a1e/pessoa
+Content-Type: application/json
+
+{
+    "cor": "preto",
+    "idade": 18
 }
